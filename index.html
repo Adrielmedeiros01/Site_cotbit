@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Cotação Bitcoin</title>
+</head>
+<body>
+  <div class="container">
+    <script>
+      //=============================================================================================================
+      function pegaremail() {
+
+          let email = document.getElementById("email").value;
+          let aux = "@gmail.com"
+
+          if (email === "" || !email.includes(aux)){
+            document.getElementById("demo").style.color="red";
+            document.getElementById("demo").innerHTML = " Sem sucesso!";
+          }
+          else {
+            document.getElementById("demo").style.color="green";
+            document.getElementById("demo").innerHTML = "Cadastrado com sucesso!";
+          }
+      }
+      //=============================================================================================================
+      function pegarHorarioAtual() {
+
+        const agora = new Date();
+        const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+        const diaSemana = diasSemana[agora.getDay()];
+
+        const dia = agora.getDate().toString().padStart(2, '0');
+        const mes = (agora.getMonth() + 1).toString().padStart(2, '0'); // Janeiro = 0
+        const ano = agora.getFullYear();
+        const horas = agora.getHours().toString().padStart(2, '0');
+        const minutos = agora.getMinutes().toString().padStart(2, '0');
+        const segundos = agora.getSeconds().toString().padStart(2, '0');
+        return `${horas}:${minutos}:${segundos} - ${dia}:${mes}:${ano} - ${diaSemana}`;
+      }
+      //=============================================================================================================
+      function atualizarHorario() {
+        const elementoData = document.getElementById('data');
+        document.getElementById("data").style.fontWeight="bold";
+        elementoData.textContent = pegarHorarioAtual();
+      }
+      // Atualiza o horário a cada segundo
+      setInterval(atualizarHorario, 1000);
+      //=============================================================================================================
+      // atualizarHorario(); // Atualiza imediatamente ao carregar
+      //=============================================================================================================
+      //=============================================================================================================
+      //=============================================================================================================
+      async function pegarCotacaoBitcoin() {
+        try {
+          const resposta = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl,usd,eur');
+          const dados = await resposta.json();
+
+          const brl = dados.bitcoin.brl.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+          const usd = dados.bitcoin.usd.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+          //const eur = dados.bitcoin.eur.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+          document.getElementById("cotacao").style.fontWeight = "bold";
+          document.getElementById('cotacao').innerHTML =
+            `🇧🇷 BRL: ${brl}<br>
+             🇺🇸 USD: ${usd}`
+             
+             //<br> 🇪🇺 EUR: ${eur}
+        }
+        catch (erro) {
+          document.getElementById('cotacao').textContent = 'Erro ao buscar cotação.';
+          console.error(erro);
+        }
+      }
+      // Atualiza a cada 10 segundos
+      pegarCotacaoBitcoin();
+      setInterval(pegarCotacaoBitcoin, 10000);
+      //=============================================================================================================
+    </script>
+    <div>
+      <hr>
+        <h2 style="text-align: center;" class="container pt-3 pb-3"> Olá! este site te oferece a cotação do Bitcoin em tempo real.
+          <img src="https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png">
+        </h2>
+      <hr>
+      <ul style="list-style-type: none; text-align: center;" class="container pt-3 pb-3">
+        <li> 
+          <h3 class="container"> Data de atualização: </h3>
+          <ul style="list-style-type: none;">
+              <li>
+                <p id="data"></p>
+              </li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="container">Valor da cotação do Bitcoin:</h3>
+          <ul style="list-style-type: none;">
+            <li>
+                <p id="cotacao"></p>
+            </li>
+         
+            <li>                 
+              <button style="background-color: black;">
+                <a style="color: white;" href="https://www.coingecko.com/"><b>Para mais cotações clique AQUI</b></a>
+              </button>
+            </li>
+          </ul>
+        </li>
+        <br>
+        <li>
+          <h3>Sites - Notícias sobre economia:</h3>
+            <ul style="list-style-type: none;">
+              <li><a href="https://economia.uol.com.br/">https://economia.uol.com.br/</a></li>
+              <li><a href="https://g1.globo.com/economia/">https://g1.globo.com/economia/</a></li>
+              <li><a href="https://www.cnnbrasil.com.br/economia/">https://www.cnnbrasil.com.br/economia/</a></li>
+              <li><a href="https://www.estadao.com.br/economia/">https://www.estadao.com.br/economia/</a></li>
+            </ul>
+        </li>
+      </ul> 
+      <hr>     
+    </div> 
+    <div>
+      <h3>Cadastrar um email
+        <img src="https://www.unirio.br/arquivologia/imagens/logo%20email.png/image" alt="erro" height="30px" width="30px">
+      </h3>
+      <label for="email"><b>Email:</b></label>
+      <input id="email" type="email" placeholder="@gmail.com">
+      <button type="button" onclick="pegaremail()">Cadastrar</button>
+      <b><p id="demo" style="color: green;"></p><b>
+      <hr>
+    </div>
+    <div>
+        <p style="text-align: center; padding: 2rem;">&copy;Copyrigth</p>
+    </div>
+  </div>
+</body>
+</html>
+
+
