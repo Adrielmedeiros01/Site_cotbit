@@ -68,7 +68,7 @@
              //<br> 🇪🇺 EUR: ${eur}
         }
         catch (erro) {
-          document.getElementById('cotacao').textContent = 'Erro ao buscar cotação.';
+          document.getElementById('cotacao').textContent = 'Carregando...';
           console.error(erro);
         }
       }
@@ -85,9 +85,10 @@
         <img src="https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png">
         </h2>
         <hr>
-
+        
         <ul style="list-style-type: none;" class="container pt-3 pb-3">
-          <li> 
+          <div style="padding: 1rem; background-color: black; color: white;" >
+             <li> 
             <h3 class="container"> Data de atualização: </h3>
             <ul style="list-style-type: none;">
                 <li>
@@ -96,41 +97,44 @@
             </ul>
           </li>
           <li>
-            <h3 class="container">Valor da cotação do Bitcoin:</h3>
+            <h3 class="container">Valor da cotação do Bitcoin:  <img style="margin-left: 6rem;" width="20%;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLD1HFgA1M0xOW1UNSHGz61P14usbo7K_DsA&s" alt=""></h3>
             <ul style="list-style-type: none;">
               <li>
                   <p id="cotacao"></p>
               </li>
               <li>                 
-                  <a style="color: black;" href="https://www.coingecko.com/"><b>Para mais cotações clique AQUI</b></a>
+                  <a href="https://www.coingecko.com/">Para mais cotações clique AQUI</a>
               </li>
             </ul>
           </li>
+          </div>
+
+         
           <br>
           <li>
             <h3 class="container">Economia:</h3>
-              <ul style="list-style-type: none;">
-                <li><a href="https://economia.uol.com.br/">https://economia.uol.com.br/</a></li>
-                <li><a href="https://g1.globo.com/economia/">https://g1.globo.com/economia/</a></li>
-                <li><a href="https://www.cnnbrasil.com.br/economia/">https://www.cnnbrasil.com.br/economia/</a></li>
-                <li><a href="https://www.estadao.com.br/economia/">https://www.estadao.com.br/economia/</a></li>
+              <ul>
+                <li><a href="https://economia.uol.com.br/">Uol</a></li>
+                <li><a href="https://g1.globo.com/economia/">g1 Globo</a></li>
+                <li><a href="https://www.cnnbrasil.com.br/economia/">CNN Brasil</a></li>
+                <li><a href="https://www.estadao.com.br/economia/">Estadão</a></li>
                 <br>
               </ul>
 
           </li>
           <li>
             <h3 class="container">Como gerar sua carteira offline:</h3>
-            <ul style="list-style-type: none;">
-              <li><a href="https://github.com/iancoleman/bip39">https://github.com/iancoleman/bip39</a></li>
-              <li><a href="https://www.youtube.com/watch?v=Va42n_wprWA">https://www.youtube.com/watch?v=Va42n_wprWA</a></li>
+            <ul>
+              <li><a href="https://github.com/iancoleman/bip39">Ian Coleman (Github)</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Va42n_wprWA">Tutorial</a></li>
             </ul>
           </li>
           <li>
             <br>
-            <h3 class="container">Artigos:</h3>
-            <ul style="list-style-type: none;">
-              <li><a href="https://maisliberdade.pt/site/assets/files/2941/hayek_-_o_uso_do_conhecimento_na_sociedade.pdf">- O uso do conhecimento humano na sociedade - (F. Hayek)</a></li>
-              <li><a href="https://www.hayekcollege.com/sites/default/files/ebooks/As%20Seis%20Licoes%20-%20Ludwig%20Von%20Mises.pdf">- As 6 lições - (Von Mises)</a></li>
+            <h3 class="container">Artigos e Livros: </h3>
+            <ul>
+              <li><a href="https://maisliberdade.pt/site/assets/files/2941/hayek_-_o_uso_do_conhecimento_na_sociedade.pdf"> O uso do conhecimento humano na sociedade - (F. Hayek)</a></li>
+              <li><a href="https://www.hayekcollege.com/sites/default/files/ebooks/As%20Seis%20Licoes%20-%20Ludwig%20Von%20Mises.pdf"> As 6 lições - (Von Mises)</a></li>
             </ul>
           </li>
         </ul> 
@@ -139,11 +143,26 @@
       </div>
 
       <div class="col-md-4">
-        <img style="margin-left: 5rem; margin-bottom: 3rem; margin-top: 2rem;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZzTrcKmTU3AmuAbT1NEMBl6RR1m2wl2NDQ&s" alt="erro">
+        <img style=" margin-top: 2rem; margin-left: 30%; width: 40%; height: 200px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZzTrcKmTU3AmuAbT1NEMBl6RR1m2wl2NDQ&s" alt="erro">
+
         <br>
-        <h4 class="text-center">Os 10 Mandamentos do Bitcoin</h4>
+
         <br>
-        <pre>
+        <h4 style="text-align: center;">Quem é Satoshi Nakamoto?</h4>
+        <br>
+        <iframe style="width: 100%;" width="270" height="215" src="https://www.youtube.com/embed/4oq96jMDZvk?si=r98f_QFuhmrDkEf5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div style=" margin-top: 2rem; width:100%; height:250px; background:#ccc; display:flex; align-items:center; justify-content:center; font-family:sans-serif; font-size:14px; color:#333;">
+            Espaço para Anúncio
+        </div>
+      </div>
+    </div> 
+
+    <div>
+      <br> 
+      <h4 class="text-center">Os 10 Mandamentos do Bitcoin</h4>
+      <br>
+      <pre>
 01 - Bitcoin não se vende, apenas se compra.
 02 - Nunca deixe a custódia de seus Bitcoins nas mãos de terceiros ("Not your key not your Bitcoin") e faça o backup de sua private key.
 03 - Não adore cópias do Bitcoin, pois o máximo que elas farão por vc é te deixar mais pobre.
@@ -154,14 +173,8 @@
 08 - Não roube ou cobice os Bitcoins de outra pessoa, trabalhe e compre os seus.
 09 - Nunca pergunte a outra pessoa quantos Bitcoins ela possui.
 10 - Não negue ajuda a um novato, pois um dia você também foi um.
-        </pre>
-
-        <br>
-        <h4 style="text-align: center;">Quem é Satoshi Nakamoto?</h4>
-        <br>
-        <iframe style="margin-left: 3rem;" width="270" height="215" src="https://www.youtube.com/embed/4oq96jMDZvk?si=r98f_QFuhmrDkEf5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </div> 
+      </pre>
+    </div>
 
     
 
