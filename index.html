@@ -7,13 +7,13 @@
     <title>Cotação Bitcoin</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container mt-4">
     <script>
       //=============================================================================================================
       function pegaremail() {
 
           let email = document.getElementById("email").value;
-          const aux = "@gmail.com"
+          let aux = "@gmail.com"
 
           if (email === "" || !email.includes(aux)){
             document.getElementById("demo").style.color="red";
@@ -78,66 +78,84 @@
       //=============================================================================================================
     </script>
 
-    <div>
-      <hr>
-      <h2 style="text-align: center;" class="container pt-3 pb-3"> Olá! este site te oferece a cotação do Bitcoin em tempo real.
-      <img src="https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png">
-      </h2>
-      <hr>
-    
-    
-      
-      <a href="https://www.bbc.com/portuguese/articles/c8je4g479n4o"><img style="margin-left: 11rem;" src="https://terrabrasilnoticias.com/wp-content/uploads/2024/01/01-351.jpg" alt=""></a>
-      <hr>
-    </div>
-    <div>
-      <ul style="list-style-type: none; text-align: center;" class="container pt-3 pb-3">
-        <li> 
-          <h3 class="container"> Data de atualização: </h3>
-          <ul style="list-style-type: none;">
-              <li>
-                <p id="data"></p>
-              </li>
-          </ul>
-        </li>
-        <li>
-          <h3 class="container">Valor da cotação do Bitcoin:</h3>
-          <ul style="list-style-type: none;">
-            <li>
-                <p id="cotacao"></p>
-            </li>
-            <li>                 
-              <button type="button">
-                <a style="color: black;" href="https://www.coingecko.com/"><b>Para mais cotações clique AQUI</b></a>
-              </button>
-            </li>
-          </ul>
-        </li>
-        <br>
-        <li>
-          <h3>Sites - Notícias sobre economia:</h3>
-            <ul style="list-style-type: none;">
-              <li><a href="https://economia.uol.com.br/">https://economia.uol.com.br/</a></li>
-              <li><a href="https://g1.globo.com/economia/">https://g1.globo.com/economia/</a></li>
-              <li><a href="https://www.cnnbrasil.com.br/economia/">https://www.cnnbrasil.com.br/economia/</a></li>
-              <li><a href="https://www.estadao.com.br/economia/">https://www.estadao.com.br/economia/</a></li>
-              <br>
-            </ul>
+    <div class="row">
+      <div class="col-md-8">        
+        <hr>
+        <h2 style="text-align: center;" class="container pt-3 pb-3"> Olá! este site te oferece a cotação do Bitcoin em tempo real.
+        <img src="https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png">
+        </h2>
+        <hr>
 
-        </li>
-        <li>
-          <h3>Como gerar sua carteira offline:</h3>
-          <ul style="list-style-type: none;">
-            <li><a href="https://github.com/iancoleman/bip39">https://github.com/iancoleman/bip39</a></li>
-             <li><a href="https://www.youtube.com/watch?v=Va42n_wprWA">https://www.youtube.com/watch?v=Va42n_wprWA</a></li>
-          </ul>
-        </li>
-      </ul> 
-      <hr>     
+        <ul style="list-style-type: none;" class="container pt-3 pb-3">
+          <li> 
+            <h3 class="container"> Data de atualização: </h3>
+            <ul style="list-style-type: none;">
+                <li>
+                  <p id="data"></p>
+                </li>
+            </ul>
+          </li>
+          <li>
+            <h3 class="container">Valor da cotação do Bitcoin:</h3>
+            <ul style="list-style-type: none;">
+              <li>
+                  <p id="cotacao"></p>
+              </li>
+              <li>                 
+                  <a style="color: black;" href="https://www.coingecko.com/"><b>Para mais cotações clique AQUI</b></a>
+              </li>
+            </ul>
+          </li>
+          <br>
+          <li>
+            <h3 class="container">Economia:</h3>
+              <ul style="list-style-type: none;">
+                <li><a href="https://economia.uol.com.br/">https://economia.uol.com.br/</a></li>
+                <li><a href="https://g1.globo.com/economia/">https://g1.globo.com/economia/</a></li>
+                <li><a href="https://www.cnnbrasil.com.br/economia/">https://www.cnnbrasil.com.br/economia/</a></li>
+                <li><a href="https://www.estadao.com.br/economia/">https://www.estadao.com.br/economia/</a></li>
+                <br>
+              </ul>
+
+          </li>
+          <li>
+            <h3 class="container">Como gerar sua carteira offline:</h3>
+            <ul style="list-style-type: none;">
+              <li><a href="https://github.com/iancoleman/bip39">https://github.com/iancoleman/bip39</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Va42n_wprWA">https://www.youtube.com/watch?v=Va42n_wprWA</a></li>
+            </ul>
+          </li>
+        </ul> 
+      <hr> 
+
+      </div>
+
+      <div class="col-md-4">
+        <img style="margin-left: 4rem; margin-bottom: 3rem; margin-top: 2rem;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZzTrcKmTU3AmuAbT1NEMBl6RR1m2wl2NDQ&s" alt="erro">
+        <br>
+        <h4 class="text-center">Os 10 Mandamentos do Bitcoin</h4>
+        <br>
+        <pre>
+01 - Bitcoin não se vende, apenas se compra.
+02 - Nunca deixe a custódia de seus Bitcoins nas mãos de terceiros ("Not your key not your Bitcoin") e faça o backup de sua private key.
+03 - Não adore cópias do Bitcoin, pois o máximo que elas farão por vc é te deixar mais pobre.
+04 - Nunca se curve ao poder Estatal, levante-se e lute contra o totalitarismo financeiro.
+05 - Nunca compre Bitcoin de uma só vez, faça compras regulares durante o maior tempo possível.
+06 - Não use o nome do Bitcoin em vão, muito menos em golpes financeiros.
+07 - Não Existe rendimento fixo e nem promessa de lucros, pois o Bitcoin promete e entrega apenas liberdade.
+08 - Não roube ou cobice os Bitcoins de outra pessoa, trabalhe e compre os seus.
+09 - Nunca pergunte a outra pessoa quantos Bitcoins ela possui.
+10 - Não negue ajuda a um novato, pois um dia você também foi um.
+        </pre>
+
+        <br>
+        <h4>Quem é Satoshi Nakamoto?</h4>
+        <br>
+        <iframe style="margin-left: 1rem;" width="270" height="215" src="https://www.youtube.com/embed/4oq96jMDZvk?si=r98f_QFuhmrDkEf5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div> 
 
-
-
+    
 
     <!--
     <div>
@@ -151,25 +169,6 @@
       <hr>
     </div>
     -->
-
-    <div>
-
-      <pre>
-        OS 10 MANDAMENTOS DE SATOSHI NAKAMOTO:
-
-        ✓ 01 - Bitcoin não se vende, apenas se compra.
-        ✓ 02 - Nunca deixe a custódia de seus Bitcoins nas mãos de terceiros ("Not your key not your Bitcoin") e faça o backup de sua private key.
-        ✓ 03 - Não adore cópias do Bitcoin, pois o máximo que elas farão por vc é te deixar mais pobre.
-        ✓ 04 - Nunca se curve ao poder Estatal, levante-se e lute contra o totalitarismo financeiro.
-        ✓ 05 - Nunca compre Bitcoin de uma só vez, faça compras regulares durante o maior tempo possível.
-        ✓ 06 - Não use o nome do Bitcoin em vão, muito menos em golpes financeiros.
-        ✓ 07 - Não Existe rendimento fixo e nem promessa de lucros, pois o Bitcoin promete e entrega apenas liberdade.
-        ✓ 08 - Não roube ou cobice os Bitcoins de outra pessoa, trabalhe e compre os seus.
-        ✓ 09 - Nunca pergunte a outra pessoa quantos Bitcoins ela possui.
-        ✓ 10 - Não negue ajuda a um novato, pois um dia você também foi um.
-
-      </pre>
-    </div>
     <div>
       <p style="text-align: center; padding: 2rem;">&copy;Copyrigth</p>
     </div>
