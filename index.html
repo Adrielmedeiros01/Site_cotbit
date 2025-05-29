@@ -7,7 +7,7 @@
     <title>Cotação Bitcoin</title>
 </head>
 <body>
-  <div class="container mt-4">
+  <main class="container mt-4">
     <script>
       //=============================================================================================================
       function pegaremail() {
@@ -78,19 +78,19 @@
       //=============================================================================================================
     </script>
     <!--===============================================-->
-      <!--Título da página-->
-      <div>
-          <hr>
-          <h1 style="text-align: center;" class="container pt-3 pb-3"> Olá! este site te oferece a cotação do Bitcoin em tempo real 
-            <img src="https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png">
-          </h1>
-          <hr>
-      </div>
+      <!--Cabeçalho:-->
+    <header>
+      <hr>
+      <h1 style="text-align: center;" class="container pt-3 pb-3"> Olá! este site te oferece a cotação do Bitcoin em tempo real 
+          <img src="https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png">
+      </h1>
+      <hr>
+    </header>
     <!--===============================================-->  
-    <!--Divisão da página-->
-    <div class="row">
+    <!--Divisão da página:-->
+    <section class="row">
       <!--Lado esquerdo da página-->
-      <div class="col-md-8">        
+      <main class="col-md-8">        
         <ul style="list-style-type: none;" class="container pt-3 pb-3">
           <!--Cotação BITCOIN:-->
           <div style="padding: 1rem; background-color: black; color: white;" >
@@ -130,6 +130,7 @@
           <li>
             <h3 class="container">Como gerar sua carteira offline:</h3>
             <ul>
+              <li><a href="https://blog.areabitcoin.com.br/ian-coleman/">Tutorial Ian Coleman - (Leia com atenção!)</a></li>
               <li><a href="https://github.com/iancoleman/bip39">Ian Coleman (Github)</a></li>
               <li><a href="https://www.youtube.com/watch?v=Va42n_wprWA">Tutorial (Blue Walet)</a></li>
             </ul>
@@ -160,29 +161,32 @@
         <hr>
         <br>
         <br>
+        <!--Continuação depois do anuncio:-->
         <div class="container">
           <h3 class="container">(What) - O que é o bitcoin:</h3>
           <ul style="list-style-type: none;" class="container pb-3">
             <li>
-              <pre style="width: 100%;">
+              <br>
+              <pre style="margin-left: 10%; width: 100%;">
 <b>Em apenas uma frase:</b> bitcoin (token) é o dinheiro que pode ser
 enviado por qualquer meio de comunicação e Bitcoin é o sistema
 público e aberto de registros de seu token nativo e o software 
 livre para sua utilização pela Internet.
-              </pre>
-            
-              <pre style="color: white; background-color: black; text-align: center; padding: 2rem; width: 100%; height: 150px;">
+              </pre> 
+              <div style="background-color: black;">
+                <pre style="color: white; text-align: center; padding: 2rem; width: 100%; height: 150px;">
 "Bitcoin é a comunidade
- e a comunidade é o Bitcoin"
+e a comunidade é o Bitcoin"
 
 <b>Mircea Popescu</b>
-              </pre>
+                </pre>            
+              </div>
             </li>
           </ul>
         </div> 
-      </div>
+      </main>
       <!--Lado direito da página-->
-      <div class="col-md-4"> 
+      <main class="col-md-4"> 
         <img style=" margin-top: 2rem; margin-left: 30%; width: 40%; height: 195px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZzTrcKmTU3AmuAbT1NEMBl6RR1m2wl2NDQ&s" alt="erro">
         <br>
         <br>
@@ -216,18 +220,16 @@ livre para sua utilização pela Internet.
         <br>
         <div>
           <h4 style="text-align: center;">Inflação para leigos:</h4>
-          <iframe style="padding-top: 2rem; width: 100%; height: 250px;" src="https://www.youtube.com/embed/w_xLwYBgpLU?si=dCmeoREJXFAtIKGh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe style="padding-top: 2rem; width: 100%; height: 300px; " src="https://www.youtube.com/embed/w_xLwYBgpLU?si=dCmeoREJXFAtIKGh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-      </div>
-      <div style="background-color: black;">
-      </div>
-    </div>
-    <!--==================10 mandamentos=============================-->
-    <div>
+      </main>
+    </section>
+    <!--==================10 mandamentos=====================-->
+    <section>
       <h4 class="text-center">Os 10 Mandamentos do Bitcoin</h4>
       <br>
       <pre>
-1.  (Nem suas chaves - nem seus bitcoins) - Se você não possui as chaves para acessar o blockchain, então você não possui criptografia, mas simplesmente confia no serviço.
+1. (Nem suas chaves - nem seus bitcoins) - Se você não possui as chaves para acessar o blockchain, então você não possui criptografia, mas simplesmente confia no serviço.
 2. (Não revele a ninguém quanto dinheiro Bitcoin você possui) - Os Bitcoins adoram o silêncio. Não se torne alvo de golpistas e hackers.  
 3. (HODL! Isto não se aplica aos comerciantes – apenas aos investidores) Ao comprar Bitcoin, você deve estar ciente de que seu preço pode oscilar bastante. Mantenha suas emoções sob controle e não venda.  
 4. (Somente o Bitcoin é Importante) - Os maximalistas do Bitcoin acreditam apenas no Bitcoin – porque é uma invenção única que difere das criptomoedas que vieram depois.  
@@ -238,16 +240,21 @@ livre para sua utilização pela Internet.
 9. (Tome suas próprias decisões) - Ouça as autoridades, mas não as siga cegamente – afinal, cabe a você tomar suas próprias decisões de investimento.  
 10. (Acumule mais BTC) - O Bitcoin  tem uma vantagem incrível sobre o ouro: cada unidade do Bitcoin é divisível com oito casas decimais. Você sempre pode comprar mais satoshi – você terá um grande capital.
       </pre>
-    </div>
+    </section>
     <!--===============================================-->
-    <!--Rodapé-->
+    <!--Rodapé:-->
     <footer>
+      <hr>
+      <div style="text-align: center; padding: 2rem;">  
+        <label for="email"><b>Email: </b></label>
+        <input type="email" name="" id="email" placeholder="Seu E-mail"> 
+        <button type="button">Inscreva-se</button>
+      </div>
       <p style="text-align: center; padding: 3rem;"><b>&copy;Copyright</b></p>
-      <p style="text-align: center;">bc1qgutuymtn2um6anyp37w7pv7n4le5mlr8m8knhf</p>
+      <hr>
     </footer>
     <!--===============================================-->
-  </div>
-
+  </main>
 </body>
 </html>
 
