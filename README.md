@@ -2,4 +2,4 @@
 
 Acesse em: [https://cotbit.w3spaces.com](https://cotbit.w3spaces.com/index.html)
 
-Servidor: cotbit.netlify.app
+Servidor: [cotbit.netlify.app](https://cotbit.netlify.app/)
