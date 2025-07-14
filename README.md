@@ -1,5 +1,6 @@
 # Site_cotbit
 
-Acesse em: [https://cotbit.w3spaces.com](https://cotbit.w3spaces.com/index.html)
+Acesse em: https://cotbit.netlify.app/
 
-Servidor: [cotbit.netlify.app](https://cotbit.netlify.app/)
+Servidor: https://www.netlify.com/
+
