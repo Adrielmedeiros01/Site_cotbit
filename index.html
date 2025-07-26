@@ -13,34 +13,6 @@
   body {
     background-color: #0a1128;
   }
-  /* Barra de navegação: */
-/*   #barranav {
-    width: 100%;
-    height: 4rem;
-    position: fixed;
-    background-color: #000514;
-  }
-  #barranav nav {
-    margin-top: 1.3rem;
-  }
-  #barranav ul {
-    font-size: 13px;
-    float: right;
-    list-style-type: none;
-    margin-right: 1.8rem;
-  }
-  #barranav li {
-    margin-right: 0.9rem;
-    display: inline-block;
-    font-size: larger;
-    font-weight: bold;
-
-  }
-  #barranav a {
-    color: white;
-    text-decoration: none;
-  }
- */
   /* Cabecalho: */
   #cabecalho div{
     text-align: center;
@@ -49,8 +21,6 @@
   #cabecalho img {
     border-radius: 100%;
     width: 70%;
-    /* width: 300px;
-    height: 200px; */
   }
 
 /* ========================= */
@@ -91,11 +61,8 @@
   #rev-art a{
     color: white;
     text-decoration: none;
-
   }
-
 /* ========================= */
-
   #anuncio {
     text-align: center;
   }
@@ -106,7 +73,6 @@
     height: "200px";
     text-align: center;
   }
-
 /* ========================= */
 
   #continuapag section{
@@ -121,26 +87,22 @@
   #continuapag ul{
     list-style-type: none;
   }
-
   #borda {
     border-radius: 2%;
     border: solid 1px #f4c430; 
     padding: 1rem; 
     background-color: #000514;
   }
-
   #borda h4 {
     color: #ffcc00; 
     text-align: center;
   }
-
   #imagem-satoshi {
     margin-top: 2rem; 
     margin-left: 30%; 
     width: 40%; 
     height: 195px
   } 
-
   #medoganacia {
     margin-bottom: 2rem; 
     margin-top: 2rem; 
@@ -157,11 +119,7 @@
     color: white;
     text-align: justify;
   }
-
-
   /* =================================*/
-
-
   #barra {
     width: 100%;
     height: 3.5rem;
@@ -180,10 +138,6 @@
     margin-left: 0;
     
   }
-  /* 
-  #itens {
-    display: none;
-  } */
 
   #ul, .li {
     list-style-type: none;
@@ -191,6 +145,7 @@
   }
 
   #ul {
+    
     display: flex;
     flex-direction: column;
     margin-top: 4.0rem;
@@ -198,15 +153,26 @@
     width: 100%;
   }
 
-  .li {
+  .li{
     color: white;
     padding: 1rem;
     text-align: center;
     margin-right: 2rem;
     font-weight: bold;
+  
   }
 
-  .li:hover {
+  .li a {
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+
+  .li a:hover {
     background-color: #ffcc00;
     color: #000514;
     border-radius: 10%;
@@ -232,10 +198,12 @@
   @media screen and (max-width: 768px) {
 
     #ul {
-        background-color: white;
+        background-color: #000514;
         border-radius: 5%;
         border: solid 1px black;
     }
+
+
     .li {
         color: #000514;
         border-bottom: solid 1px black;
@@ -245,8 +213,8 @@
 
   }
 
-
 </style>
+
 
 <body onresize="mudoutamanho">
 
@@ -255,12 +223,9 @@
           <i id="botmenu" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
           <div id="itens">
             <ul id="ul">
-                <li class="li">SOBRE</li>
-                <li class="li">CONTRIBUIR</li>
-                <li class="li">SAIBA MAIS</li>
-                <li class="li">ECONOMIA</li>
-                <li class="li">LOGIN</li>
-                <li class="li">ARTIGOS</li>
+                <li class="li"><a href="atual.html">INICIO</a></li>
+                <li class="li"><a href="sobre.html">SOBRE</a></li>
+                <li class="li"><a href="chavepublica.html">CONTRIBUIR</a></li>
             </ul>
           </div>
         </div>
@@ -289,16 +254,7 @@
         window.onresize = mudoutamanho;
 
     </script>
-  <!-- Barra de navegação: -->
-  <!-- <div id="barranav">  
-    <nav>     
-      <ul>
-        <li><a href="">SOBRE</a></li>
-        <li><a href="">CONTATO</a></li>
-        <li><a href="">AJUDA</a></li>
-      </ul>
-    </nav>
-  </div> -->
+
   <br>
   <main class="container mt-4">
     <script>
@@ -307,7 +263,7 @@
         const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
         const diaSemana = diasSemana[agora.getDay()];
         const dia = agora.getDate().toString().padStart(2, '0');
-        const mes = (agora.getMonth() + 1).toString().padStart(2, '0'); // Janeiro = 0
+        const mes = (agora.getMonth() + 1).toString().padStart(2, '0');
         const ano = agora.getFullYear();
         const horas = agora.getHours().toString().padStart(2, '0');
         const minutos = agora.getMinutes().toString().padStart(2, '0');
@@ -588,4 +544,3 @@
   </main>
 </body>
 </html>
-
