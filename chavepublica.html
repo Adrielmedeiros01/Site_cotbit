@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Doações</title>
+</head>
+
+
+<style>
+
+    body {
+        background-color: #0a1128;
+    }
+
+    #sessao {
+        border: solid 1px #f4c430;
+        padding: 3rem;
+        margin-bottom: 7rem;
+        background-color:  #000514;
+        border-radius: 2%;
+        width: 80% ;
+    }
+
+    #sessao h1 {
+        color: #ffcc00;
+        text-align: justify;
+    }
+
+    #sessao p {
+
+        text-align: center;
+        color: white;
+        padding-top: 3rem;
+
+    }
+
+    #agradece {
+        text-align: center;
+        color: #ffcc00;
+    }
+
+      #barra {
+    width: 100%;
+    height: 3.5rem;
+    position: fixed;
+    background-color: #000514;
+    display: flex;
+  }
+
+  #botmenu {
+    color: white;
+    background-color: #000514;
+    padding: 1rem;
+    cursor: pointer;
+    display: block;
+    margin-left: 0;
+    
+  }
+
+  #ul, .li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  #ul {
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 4.0rem;
+    background-color: #000514;
+    width: 100%;
+  }
+
+  .li{
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-right: 2rem;
+    font-weight: bold;
+  
+  }
+
+  .li a {
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+
+  .li a:hover {
+    background-color: #ffcc00;
+    color: #000514;
+    border-radius: 10%;
+  }
+
+  @media screen and (min-width: 768px) {
+
+    #botmenu {
+      display: none;
+    }
+
+    #itens {
+      display: block;
+    }
+
+    #ul {
+      flex-direction: row;
+      margin: 0;
+    }   
+
+  }
+
+  @media screen and (max-width: 768px) {
+
+    #ul {
+        background-color: #000514;
+        border-radius: 5%;
+        border: solid 1px black;
+    }
+
+
+    .li {
+        color: #000514;
+        border-bottom: solid 1px black;
+       
+    }
+ 
+
+  }
+
+</style>
+
+<body onresize="mudoutamanho" >
+
+
+     <section>
+        <div id="barra">
+          <i id="botmenu" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+          <div id="itens">
+            <ul id="ul">
+                <li class="li"><a href="atual.html">INICIO</a></li>
+                <li class="li"><a href="sobre.html">SOBRE</a></li>
+                <li class="li"><a href="chavepublica.html">CONTRIBUIR</a></li>
+            </ul>
+          </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br>
+
+    <script>
+
+        const itens = document.getElementById("itens");
+
+        function clickMenu() {
+            if (itens.style.display === "block") {
+                itens.style.display = "none";
+            } else {
+                itens.style.display = "block";
+            }
+        }
+        function mudoutamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = "block";
+            } else {
+                itens.style.display = "none";
+            }
+        }
+
+        window.onload = mudoutamanho;
+        window.onresize = mudoutamanho;
+
+    </script>
+
+    <section class="container" id="sessao">
+        <h1>AQUI ESTÁ A CHAVE PÚBLICA PARA DOAÇÕES EM BTC:</h1>
+        <p>chave</p>
+    </section>
+
+
+    <h1 class="container" id="agradece">
+        OBRIGADO!
+    </h1>
+
+    <br><br><br><br>
+    <!-- Caixa de comentários: -->
+    <div class="container" style="background-color: white;">
+      <div class="commentbox"></div>
+      <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+      <script>commentBox('5703677973102592-proj')</script>
+    </div> 
+
+    <br><br><br><br>
+    <footer class="container">
+      <hr>
+      <p style="color: white; text-align: center; padding: 3rem;"><b>&copy;Copyright</b></p>
+      <hr>
+    </footer>
+
+</body>
+</html>
