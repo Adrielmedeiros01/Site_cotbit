@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    #barra_sup {
+        background-color: rgb(2, 2, 39);
+        height: 7rem;
+        position: fixed;
+        width: 100%;
+    }
+    #barra_sup h1 {
+        padding: 1rem;
+        color: white;
+        text-align: center;
+    }
+    #menu {
+        background-color: red;
+    }
+    #ul {
+        list-style: none;
+        /* margin: 0; */
+        /* padding: 0; */
+        display: flex;
+        /* gap: 20px; */
+    }
+    #ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        /* display: block; */
+    }
+    #ul li a:hover {
+        background-color: darkred;
+        border-radius: 5px;
+    }
+
+    #barra {
+    width: 100%;
+    height: 3.5rem;
+    position: fixed;
+    background-color: red;
+    display: flex;
+
+  }
+
+  #botmenu {
+    color: white;
+    background-color: #000514;
+    padding: 1rem;
+    cursor: pointer;
+    display: block;
+    margin-left: 0;
+    
+  }
+
+
+  /* -------------------------------------- */
+
+  #ul, .li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  #ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4.0rem;
+    /* background-color: #000514; */
+    width: 100%;
+  }
+
+  .li{
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-right: 2rem;
+    font-weight: bold;
+  
+  }
+
+  .li a {
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+
+  .li a:hover {
+    background-color: #ffcc00;
+    color: #000514;
+    border-radius: 10%;
+  }
+
+  @media screen and (min-width: 768px) {
+
+    #botmenu {
+      display: none;
+    }
+
+    #itens {
+      display: block;
+    }
+
+    #ul {
+      flex-direction: row;
+      margin: 0;
+    }   
+
+  }
+
+  @media screen and (max-width: 768px) {
+
+    #ul {
+        background-color: #000514;
+        border-radius: 5%;
+        border: solid 1px black;
+    }
+
+
+    .li {
+        color: #000514;
+        border-bottom: solid 1px black;
+       
+    }
+ 
+  }
+
+</style>
+
+<body onresize="mudoutamanho">
+
+    <section id="barra_sup">
+        <h1>IFPE - LICENCIATURA EM COMPUTAÇÃO</h1>
+        <div id="barra">
+            <div id="itens">
+                <i id="botmenu" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+                <ul id="ul">
+                    <li class="li"><a href="#aula1">Aula 1</a></li>
+                    <li class="li"><a href="#aula2">Aula 2</a></li>
+                    <li class="li"><a href="#aula3">Aula 3</a></li>
+                    <li class="li"><a href="#aula4">Aula 4</a></li>
+                    <li class="li"><a href="#aula5">Aula 5</a></li>
+                    <li class="li"><a href="#comentarios">Comentários</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+
+
+     <script>
+
+        const itens = document.getElementById("itens");
+
+        function clickMenu() {
+            if (itens.style.display === "block") {
+                itens.style.display = "none";
+            } else {
+                itens.style.display = "block";
+            }
+        }
+        function mudoutamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = "block";
+            } else {
+                itens.style.display = "none";
+            }
+        }
+
+        window.onload = mudoutamanho;
+        window.onresize = mudoutamanho;
+
+    </script>
+
+    
+</body>
+</html>
+
