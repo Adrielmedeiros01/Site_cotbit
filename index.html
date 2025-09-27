@@ -42,7 +42,7 @@
     padding: 1rem; 
     background-color: #000514;
     color: white;
-    /* box-shadow: 5px 1px 9px  #f4c430; */
+    box-shadow: 5px 5px 10px black;
   }
   #divcot h3, a{
     color: #ffcc00;
@@ -55,7 +55,7 @@
     border: solid 1px #f4c430;
     padding: 1rem; 
     background-color: #000514;
-    /* box-shadow: 5px 5px 5px  #f4c430; */
+    box-shadow: 5px 5px 10px black;
   }
   #rev-art h3{
     color: #ffcc00;
@@ -88,7 +88,7 @@
     border: solid 1px #f4c430;
     padding: 1rem; 
     background-color: #000514;
-    /* box-shadow: 5px 5px 5px  #f4c430; */
+    box-shadow: 5px 5px 10px black;
   }
   #continuapag h3{
     color: #ffcc00;
@@ -101,7 +101,7 @@
     border: solid 1px #f4c430; 
     padding: 1rem; 
     background-color: #000514;
-    /* box-shadow: 5px 5px 5px  #f4c430; */
+    box-shadow: 5px 5px 10px black;
   }
   #borda h4 {
     color: #ffcc00; 
@@ -111,7 +111,8 @@
     margin-top: 2rem; 
     margin-left: 30%; 
     width: 40%; 
-    height: 195px
+    height: 195px;
+    border-radius: 10px;
     
   } 
   #medoganacia {
@@ -133,7 +134,6 @@
   /* =================================*/
   #barra {
     width: 100%;
-   
     position: fixed;
     background-color: #000514;
     display: flex;
@@ -254,54 +254,63 @@
 
     </script>
 
+
+
+ 
+
   <br>
   <main class="container mt-4">
-    <script>
-      function pegarHorarioAtual() {
-        const agora = new Date();
-        const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-        const diaSemana = diasSemana[agora.getDay()];
-        const dia = agora.getDate().toString().padStart(2, '0');
-        const mes = (agora.getMonth() + 1).toString().padStart(2, '0');
-        const ano = agora.getFullYear();
-        const horas = agora.getHours().toString().padStart(2, '0');
-        const minutos = agora.getMinutes().toString().padStart(2, '0');
-        const segundos = agora.getSeconds().toString().padStart(2, '0');
-        return `${horas}:${minutos}:${segundos} - ${dia}:${mes}:${ano} - ${diaSemana}`;
-      }
-      //=============================================================================================================
-      function atualizarHorario() {
-        const elementoData = document.getElementById('data');
-        document.getElementById("data").style.fontWeight="bold";
-        elementoData.textContent = pegarHorarioAtual();
-      }
-      // Atualiza o horário a cada segundo
-      setInterval(atualizarHorario, 1000);
-      //=============================================================================================================
-      // atualizarHorario(); // Atualiza imediatamente ao carregar
-      //=============================================================================================================
-      async function pegarCotacaoBitcoin() {
-        try {
-          const resposta = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl,usd,eur');
-          const dados = await resposta.json();
-          const brl = dados.bitcoin.brl.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-          const usd = dados.bitcoin.usd.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-          //const eur = dados.bitcoin.eur.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
-          document.getElementById("cotacao").style.fontWeight = "bold";
-          document.getElementById('cotacao').innerHTML =
-            `🇧🇷 BRL: ${brl}<br>
-             🇺🇸 USD: ${usd}`
+        <div style="text-align: center; margin-top: 5rem; ">
+            <h1 style="color: #ffcc00; text-shadow: 5px 5px black;">Bem-Vindo ao mundo do Bitcoin!</h1>
+            <p style="color: white;">Acompanhe em tempo real a cotação, notícias e curiosidades sobre a moeda mais famosa do mundo digital.</p>
+            
+        </div>
+        <script>
+        function pegarHorarioAtual() {
+            const agora = new Date();
+            const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+            const diaSemana = diasSemana[agora.getDay()];
+            const dia = agora.getDate().toString().padStart(2, '0');
+            const mes = (agora.getMonth() + 1).toString().padStart(2, '0');
+            const ano = agora.getFullYear();
+            const horas = agora.getHours().toString().padStart(2, '0');
+            const minutos = agora.getMinutes().toString().padStart(2, '0');
+            const segundos = agora.getSeconds().toString().padStart(2, '0');
+            return `${horas}:${minutos}:${segundos} - ${dia}:${mes}:${ano} - ${diaSemana}`;
         }
-        catch (erro) {
-          document.getElementById('cotacao').textContent = 'Carregando...';
-          console.error(erro);
+        //=============================================================================================================
+        function atualizarHorario() {
+            const elementoData = document.getElementById('data');
+            document.getElementById("data").style.fontWeight="bold";
+            elementoData.textContent = pegarHorarioAtual();
         }
-      }
-      // Atualiza a cada 10 segundos
-      pegarCotacaoBitcoin();
-      setInterval(pegarCotacaoBitcoin, 10000);
-      //=============================================================================================================
-    </script>
+        // Atualiza o horário a cada segundo
+        setInterval(atualizarHorario, 1000);
+        //=============================================================================================================
+        // atualizarHorario(); // Atualiza imediatamente ao carregar
+        //=============================================================================================================
+        async function pegarCotacaoBitcoin() {
+            try {
+            const resposta = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl,usd,eur');
+            const dados = await resposta.json();
+            const brl = dados.bitcoin.brl.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            const usd = dados.bitcoin.usd.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            //const eur = dados.bitcoin.eur.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+            document.getElementById("cotacao").style.fontWeight = "bold";
+            document.getElementById('cotacao').innerHTML =
+                `🇧🇷 BRL: ${brl}<br>
+                🇺🇸 USD: ${usd}`
+            }
+            catch (erro) {
+            document.getElementById('cotacao').textContent = 'Carregando...';
+            console.error(erro);
+            }
+        }
+        // Atualiza a cada 10 segundos
+        pegarCotacaoBitcoin();
+        setInterval(pegarCotacaoBitcoin, 10000);
+        //=============================================================================================================
+        </script>
     <!--===============================================-->
     <!--Cabeçalho:-->
     <br><br>
@@ -382,7 +391,7 @@
         
         <!--Anuncio: -->
         <div id="anuncio">
-          <a href="https://bipa.app/"><img src="https://bipa.app/bipa-og-image.png"></a>
+          <a href="https://bipa.app/"><img style="box-shadow: 9px 5px 10px white ;" src="https://bipa.app/bipa-og-image.png"></a>
         </div>
         <br>
         <!--Continuação depois do anuncio:-->
@@ -399,7 +408,7 @@
   público e aberto de registros de seu token nativo e o software 
   livre para sua utilização pela Internet.
                 </p> 
-                <div style="background-color: black;">
+                <div style="border-radius: 5px; background-color: black;">
                   <p style="color: white; text-align: center; padding: 2rem; width: 100%; height: 100%;">
   "Bitcoin é a comunidade
   e a comunidade é o Bitcoin."
@@ -416,7 +425,7 @@
             <h3 style="color: #ffcc00;" class="container">White Paper - (Clique na imagem para acessar):</h3>
             <br>
             <div style="text-align: center;">         
-              <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_pt_br.pdf"><img style="width: 80%; margin:1rem;" src="https://coingeek.com/wp-content/uploads/2020/10/theory-of-bitcoin-covers-the-bitcoin-whitepaper-line-by-line.jpg" alt=""></a>
+              <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_pt_br.pdf"><img style="width: 80%; margin:1rem; border-radius: 5px;" src="https://coingeek.com/wp-content/uploads/2020/10/theory-of-bitcoin-covers-the-bitcoin-whitepaper-line-by-line.jpg" alt=""></a>
               <br><br>
             </div>
             <br>
@@ -511,7 +520,7 @@
       <br><br><br><br><br>
       <h4 style="color: #ffcc00;;" class="text-center">Os 10 Mandamentos do Bitcoin</h4>
       <br>
-      <pre style="border-radius: 3%; padding: 1rem; background-color: #111; color: white;">
+      <pre style="box-shadow: 5px 5px 5px #ffcc00; border-radius: 3%; padding: 1rem; background-color: #111; color: white;">
 1.  <b>(Nem suas chaves - nem seus bitcoins) -</b>  Se você não possui as chaves para acessar o blockchain, então você não possui criptografia, mas simplesmente confia no serviço.
 2.  <b>(Não revele a ninguém quanto dinheiro Bitcoin você possui) -</b>  Os Bitcoins adoram o silêncio. Não se torne alvo de golpistas e hackers.  
 3.  <b>(HODL! Isto não se aplica aos comerciantes – apenas aos investidores) -</b> Ao comprar Bitcoin, você deve estar ciente de que seu preço pode oscilar bastante. Mantenha suas emoções sob controle e não venda.  
